@@ -1,0 +1,19 @@
+
+#SOLID Principles
+#1 Single Responsibility Principle
+#Violation Code
+
+class Account:
+    def deposit(self,amount): ...
+    def saveToFile(self): ...
+    def sendNotification(self,msg): ...
+
+#fix
+class Account:
+    def deposit(amount): ...
+class AccountRepo:
+    def save(acc): ...
+class AlertService:
+    def send(self, msg): ...
+
+
